@@ -41,7 +41,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new LocalStrategy(
-  function(username, password, done) {
+  (username, password, done) =>{
     console.log('username = '+ username);
     console.log('password'+ password);
     con.query("SELECT id, motDepasse FROM utilisateur WHERE nom = ?",[username],(err, res) =>{
@@ -50,7 +50,7 @@ passport.use(new LocalStrategy(
       done(null,false);}
      else{
        console.log("utisilateur existe et le mp = " + res[0].motDepasse);
-       bcrypt.compare(password,res[0].motDepasse,function(err, match){
+       bcrypt.compare(password,res[0].motDepasse, (err, match)=>{
          if(err) throw err;
          if(match ===true){
            return done(null, {user_id: res[0].id});
