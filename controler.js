@@ -88,29 +88,3 @@ module.exports = (app)=>{
  	}
  }
 }
-
-
-
-
-/*
-
-'use strict'
-
-const express = require('express');
-const app = express();
-const bp = require('body-parser');
-const user = require('./model/user');
-app.use(bp());
-//let personne = user.CreateUser("Moad123","jugu@joe.com","123");
-//user.IsMatch("Moad123","123");
-
-app.set('view engine', 'ejs');
-app.use(bp());
-app.use(express.static('public'));
-
-app.get('/', (req, res) =>{
-  res.render('./login');
-})
-
-
-*/
