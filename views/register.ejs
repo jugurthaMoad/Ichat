@@ -7,8 +7,15 @@
     <title></title>
   </head>
   <body style="padding:15%">
+    <% if(messages.errors){ %>
+      <ul class="w3-section w3-center w3-ul ">
+      <% for(let i=0; i< messages.errors.length;i++){%>
+          <li class="w3-panel w3-pale-red w3-border w3-center"><%= messages.errors[i].msg %></li>
+      <% } %>
+    </ul>
+      <%}%>
 
-    <div class="w3-card-4  w3-section w3-center" style="width:50%;min-width:30%; vertical-align: middle ;margin:auto;">
+    <div class="w3-card-4  w3-section w3-center w3-ul" style="width:50%;min-width:30%; vertical-align: middle ;margin:auto;">
 
       <header class="w3-container w3-light-grey w3-section">
         <h3>Inscription</h3>
