@@ -57,8 +57,9 @@ app.use(passport.session());
 // verification du nom mot de passe sur la base de donnée
 
 passport.use(new LocalStrategy(
-  (username, password, done)  =>{
-
+  (username, password, done) =>{
+    console.log('username = '+ username);
+    console.log('password'+ password);
     con.query("SELECT id, motDepasse FROM utilisateur WHERE nom = ?",[username],(err, res) =>{
      if(err) throw err;
 
@@ -79,7 +80,6 @@ passport.use(new LocalStrategy(
 
 
     });
-
   }
 ));
 
